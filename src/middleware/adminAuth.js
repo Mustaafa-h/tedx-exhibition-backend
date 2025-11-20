@@ -12,7 +12,7 @@ const adminAuth = (req, res, next) => {
 
   if (
     username === process.env.ADMIN_USER &&
-    password === process.env.ADMIN_PASSWORD
+    password === process.env.WORDADMIN_PASS
   ) {
     return next();
   }
