@@ -9,6 +9,7 @@ const adminAuth = require("./middleware/adminAuth");
 const adminBoothsRouter = require("./routes/adminBooths");
 const adminUploadRouter = require("./routes/adminUpload");
 const adminBookingRequestsRouter = require("./routes/adminBookingRequests");
+const cors = require("cors");
 
 
 
@@ -20,6 +21,13 @@ const PORT = process.env.PORT || 4000;
 // Middlewares
 app.use(cors());
 app.use(express.json());
+
+app.use(
+  cors({
+    origin: "*", // for now allow all; we can tighten later
+  })
+);
+
 
 // Serve uploaded logos
 app.use(
